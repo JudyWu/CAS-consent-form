@@ -1,12 +1,35 @@
 $(document).ready(function() {
     $('#generateCode').click(function () {
-    	if ($('#consent_checkbox').is(':checked') && document.getElementById('emailInput').value && document.getElementById('fullnameInput').value) {
-   		    var passcode = generateRandomCode();
-   		    $('#passcodeArea').html(passcode);
-    	    $('#passcodeSection').css("display", "block");
-    	    $('#consent').css("display", "none");
-	   	} else {
-	   		$('#error').css('display', 'block');
+    	var emailInput = document.getElementById("emailInput").value;
+    	var fullnameInput = document.getElementById("fullnameInput").value;
+    	
+	    if ($('#consent_checkbox').is(':checked')) {
+	    	if (validateEmail(emailInput)) {
+	    		if (fullnameInput) {
+	    			var passcode = generateRandomCode();
+		   		    $('#passcodeArea').html(passcode);
+		    	    $('#passcodeSection').css("display", "block");
+		    	    $('#consent').css("display", "none");
+	    		} else {
+	    			$('#fullnameError').css("display", "block");
+	    		}
+	    	} else {
+				$('#emailError').css('display', 'block');
+	    	}
+	    } else {
+	    	$('#checkError').css('display', 'block');
+	    	if (validateEmail(emailInput)) {
+	    		if (fullnameInput) {
+	    			var passcode = generateRandomCode();
+		   		    $('#passcodeArea').html(passcode);
+		    	    $('#passcodeSection').css("display", "block");
+		    	    $('#consent').css("display", "none");
+	    		} else {
+	    			$('#fullnameError').css("display", "block");
+	    		}
+	    	} else {
+				$('#emailError').css('display', 'block');
+	    	}
 	    }
     });
 
@@ -22,6 +45,10 @@ $(document).ready(function() {
 			text += possible[i].charAt(Math.floor(Math.random()* possible[i].length));
 		}
 		return text
+	}
+	function validateEmail(email) {
+	    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	    return re.test(email);
 	}
 });
 
