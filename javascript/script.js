@@ -33,12 +33,12 @@ $(document).ready(function() {
 	    }
     });
 
-    function generateRandomCode() {
+    function generateRandomCode() { 
 		var text = ""; 
 		var upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		var numbers = "0123456789";
 		var lowerLetters = "abcdefghijklmnopqrstuvwxyz"; 
-		var symbols = "%&*";
+		var symbols = "%$*";
 
 		var possible = [upperLetters, numbers, lowerLetters, symbols, numbers, upperLetters, lowerLetters];
 		for (var i = 0; i < 7; i++) {
