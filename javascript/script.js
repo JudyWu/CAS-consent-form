@@ -3,34 +3,33 @@ $(document).ready(function() {
     	var emailInput = document.getElementById("emailInput").value;
     	var fullnameInput = document.getElementById("fullnameInput").value;
     	
-	    if ($('#consent_checkbox').is(':checked')) {
-	    	if (validateEmail(emailInput)) {
-	    		if (fullnameInput) {
-	    			var passcode = generateRandomCode();
-		   		    $('#passcodeArea').html(passcode);
-		    	    $('#passcodeSection').css("display", "block");
-		    	    $('#consent').css("display", "none");
-	    		} else {
-	    			$('#fullnameError').css("display", "block");
-	    		}
-	    	} else {
-				$('#emailError').css('display', 'block');
-	    	}
-	    } else {
-	    	$('#checkError').css('display', 'block');
-	    	if (validateEmail(emailInput)) {
-	    		if (fullnameInput) {
-	    			var passcode = generateRandomCode();
-		   		    $('#passcodeArea').html(passcode);
-		    	    $('#passcodeSection').css("display", "block");
-		    	    $('#consent').css("display", "none");
-	    		} else {
-	    			$('#fullnameError').css("display", "block");
-	    		}
-	    	} else {
-				$('#emailError').css('display', 'block');
-	    	}
-	    }
+    	if (validateEmail(emailInput)) {
+    		if (fullnameInput) {
+    			var passcode = generateRandomCode();
+	   		    $('#passcodeArea').html(passcode);
+	    	    $('#passcodeSection').css("display", "block");
+	    	    $('#consent').css("display", "none");
+    		} else {
+    			$('#fullnameError').css("display", "block");
+    		}
+    	} else {
+			$('#emailError').css('display', 'block');
+    	}
+   
+    	$('#checkError').css('display', 'block');
+    	if (validateEmail(emailInput)) {
+    		if (fullnameInput) {
+    			var passcode = generateRandomCode();
+	   		    $('#passcodeArea').html(passcode);
+	    	    $('#passcodeSection').css("display", "block");
+	    	    $('#consent').css("display", "none");
+    		} else {
+    			$('#fullnameError').css("display", "block");
+    		}
+    	} else {
+			$('#emailError').css('display', 'block');
+    	}
+	    
     });
 
     function generateRandomCode() { 

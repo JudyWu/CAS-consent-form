@@ -22,36 +22,7 @@
 	        	<h3 class="panel-title">Consent Form</h3>
 	        </div>
 	        <div class="panel-body">
-	        	<p>
-		        	The purpose of this study is to help us understand the role of computerized feedback with or without different kinds of text messaging in helping individuals reduce their drinking.</br>
-
-                    You are being asked to participate in this study because you have indicated you are interested in reducing your drinking using technology.</br>
-
-                    A description of this clinical trial will be available on http://www.Clinical Trials.gov , as required by U.S. Law. This Web site will not include information that can identify you. At most, the Web site will include a summary of the results. You can search this website at any time.</br>
-
-	        	</p>
-	        </div>
-	        <div class="panel-footer">
-	            <ul>
-        	    	<li>
-		        	    <p class="help-block">My data will be shared within the institution.</p>
-						<div class="checkbox col-sm-6">
-						    <label>
-						      <input type="checkbox" id="question_checkBox">True
-						    </label>
-						</div>
-						<div class="checkbox col-sm-6">
-						    <label>
-						      <input type="checkbox">False
-						    </label>
-						 </div>
-        	
-        	    	</li>
-        	    </ul>
-	        	<input type="checkbox" id="consent_checkbox">
-					I agree to take part in this study. <span id="checkError" style="color: red; display: none;">Please check</span>
-				</input>
-				<form class="form-inline">
+	        	<form class="form-inline">
 					<div class="form-group">
 					    <label for="fullnameInput">Full Name</label>
 					    <input type="text" class="form-control" id="fullnameInput" placeholder="Judy Wu">
@@ -62,10 +33,15 @@
 					    <input type="email" class="form-control" id="emailInput" placeholder="judy.wu@example.com">
 					</div>
 					<span id="emailError" style="color: red; display: none;">Please enter valid email</span>
-					<button type="button" class="btn btn-success" id="generateCode">
-					    Get Passcode
-				    </button>
 				</form>
+	        </div>
+	        <div class="panel-footer">
+	        	<!-- <input type="checkbox" id="consent_checkbox">
+					I agree to take part in this study. <span id="checkError" style="color: red; display: none;">Please check</span>
+				</input> -->
+				<button type="button" class="btn btn-success" id="generateCode">
+					Get Passcode
+				</button>
 	        </div>
 	    </div>
 
